@@ -2,7 +2,7 @@ name: Daily Discord Logistics Sitrep
 
 on:
   schedule:
-    - cron: "10 19 * * *"
+    - cron: "30 17 * * *"
       timezone: "Europe/London"
   workflow_dispatch:
 
