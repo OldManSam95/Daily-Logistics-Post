@@ -30,12 +30,6 @@ jobs:
 
           message = f"""# Daily Logistics Sitrep - Day {day_number}
 
-          **Sitrep Note:** I have changed it so we only have 1 stockpile in Buckler Sound as there is a quick pull that I have added to the Stockpile codes.
-
-          **Transport Priority:** Fill the **regiment stockpile first**, then the **quick pull**, with any remaining supplies going into **public**.
-
-          This is to make sure supplies are actually moved out of Buckler Sound towards **Fading Lights and the front**, rather than building up in the backline.
-
           ## __**MPF TO DO LIST**__
           **Locations:** Speaking Woods, Tine
 
