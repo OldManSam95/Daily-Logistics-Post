@@ -1,10 +1,14 @@
 name: Daily Discord Logistics Sitrep
 
 on:
+  push:
+    branches:
+      - main
+    paths:
+      - ".github/workflows/discord-daily.yml"
   schedule:
     - cron: "10 19 * * *"
       timezone: "Europe/London"
-
   workflow_dispatch:
 
 jobs:
@@ -24,67 +28,62 @@ jobs:
           from datetime import datetime, date
           from zoneinfo import ZoneInfo
 
-          # -------------------------------------------------
-          # WAR DAY CALCULATION
-          # -------------------------------------------------
-
           # Day 1 = 25 August 2026
           start_date = date(2026, 8, 25)
-
-          # Get today's date in UK time
           today = datetime.now(ZoneInfo("Europe/London")).date()
-
-          # Calculate current war day
           day_number = (today - start_date).days + 1
-
-          # -------------------------------------------------
-          # DISCORD MESSAGE
-          # -------------------------------------------------
 
           message = f"""# Daily Logistics Sitrep - Day {day_number}
 
-          Sitrep Note: I have changed it so we only have 1 stockpile in Buckler Sound as there is a quick pull that I have added to the Stockpile codes.
+          **Sitrep Note:** I have changed it so we only have 1 stockpile in Buckler Sound as there is a quick pull that I have added to the Stockpile codes.
 
-          When doing transport, the target should be to fill up our stockpile first, then the quick pull, with any remaining going into public. Otherwise we will have a lot of stuff sitting in Buckler and not getting moved down to Fading Lights and the front.
+          **Transport Priority:** Fill the **regiment stockpile first**, then the **quick pull**, with any remaining supplies going into **public**.
+
+          This is to make sure supplies are actually moved out of Buckler Sound towards **Fading Lights and the front**, rather than building up in the backline.
 
           ## __**MPF TO DO LIST**__
-          Locations: Speaking Woods, Tine
-          - Loughcaster, Sampo, Fiddler, Green Ash Grenade
-          - Mortar Shell, RPGs, Cutlers
-          - 30mm, 40mm
-          - Maintenance Supplies
-            - Note: *Post Your MPF Queues Here: https://discord.com/channels/1186822663897878588/1361080809754202142*
+          **Locations:** Speaking Woods, Tine
+
+          **Small Arms:** Loughcaster, Sampo, Fiddler, Green Ash Grenade, 7.62mm, 9mm
+
+          **Heavy Arms:** Mortar Shell, RPG, Cutler
+
+          **Heavy Ammunition:** 30mm, 40mm
+
+          **Resource:** Maintenance Supplies
+
+          *Post Your MPF Queues Here: https://discord.com/channels/1186822663897878588/1361080809754202142*
 
           ## __**FACTORY TO DO LIST**__
-          Locations: Speaking Woods, Tine
-          - 7.62mm, 9mm
-          - Mortar Shell, RPGs
-          - Gas Mask, Gas Mask Filter, Radio, Binoculars, Alligator Charges
-          - Bandages, Plasma, First Aid Kit, Trauma Kit, Soldiers Supplies (Shirts)
+          **Locations:** Speaking Woods, Tine
+
+          **Small Arms:** Loughcaster, Sampo, Fiddler, Green Ash Grenade, 7.62mm, 9mm
+
+          **Heavy Arms:** Mortar Shell, RPG, Cutler
+
+          **Heavy Ammunition:** 30mm, 40mm
+
+          **Utility:** Gas Mask, Gas Mask Filter, Radio, Binoculars, Alligator Charges
+
+          **Medical:** Bandages, Plasma, First Aid Kit, Trauma Kit, Soldier Supplies (Shirts)
 
           ## __**REFINERY TO DO LIST**__
-          Locations: Tine, Speaking Woods
-          - Basic Materials
-          - Explosive Materials
-          - Refined Materials
+          **Tine / Speaking Woods**
+          **Refined Material:** Basic Materials, Explosive Materials, Refined Materials
 
-          Locations: Fading Lights, Stonecradle
-          - Basic Materials
-          - HEP
+          **Fading Lights / Stonecradle**
+          **Refined Material:** Basic Materials, HEP
+
+          ## __**LOGISTICS REMINDER**__
+          **1. Regiment Stockpile → 2. Quick Pull → 3. Public**
+
+          Keep supplies moving south — **production sitting in Buckler Sound isn't helping the front.**
           """
 
-          # Remove indentation introduced by the Python block
           message = "\n".join(line.strip() for line in message.splitlines())
 
-          # -------------------------------------------------
-          # SEND TO DISCORD
-          # -------------------------------------------------
-
           url = os.environ["DISCORD_WEBHOOK_URL"]
-
-          data = json.dumps({
-              "content": message
-          }).encode("utf-8")
+          data = json.dumps({"content": message}).encode("utf-8")
 
           request = urllib.request.Request(
               url,
@@ -100,7 +99,6 @@ jobs:
               with urllib.request.urlopen(request) as response:
                   print(f"Discord Sitrep sent successfully - Day {day_number}")
                   print("Status:", response.status)
-
           except urllib.error.HTTPError as e:
               print("Discord returned HTTP error:", e.code)
               print(e.read().decode())
