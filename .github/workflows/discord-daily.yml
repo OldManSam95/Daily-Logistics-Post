@@ -17,11 +17,36 @@ jobs:
         env:
           DISCORD_WEBHOOK_URL: ${{ secrets.DAILY_LOGI_POST }}
           MESSAGE: |
-            📢 **Daily Regiment Update**
+            # Daily Logistics Sitrep - Day 7
 
-            Remember to check today's operations and announcements.
+            Sitrep Note: I have changed it so we only have 1 stockpile in Buckler Sound as there is a quick pull that I have added to the Stockpile codes.
 
-            See you on the front!
+            When doing transport, the target should be to fill up our stockpile first, then the quick pull, with any remaining going into public. Otherwise we will have a lot of stuff sitting in Buckler and not getting moved down to Fading Lights and the front.
+
+            ## __**MPF TO DO LIST**__
+            Locations: Speaking Woods, Tine
+            - Loughcaster, Sampo, Fiddler, Green Ash Grenade
+            - Mortar Shell, RPGs, Cutlers
+            - 30mm, 40mm
+            - Maintenance Supplies
+              - Note: *Post Your MPF Queues Here: https://discord.com/channels/1186822663897878588/1361080809754202142*
+
+            ## __**FACTORY TO DO LIST**__
+            Locations: Speaking Woods, Tine
+            - 7.62mm, 9mm
+            - Mortar Shell, RPGs
+            - Gas Mask, Gas Mask Filter, Radio, Binoculars, Alligator Charges
+            - Bandages, Plasma, First Aid Kit, Trauma Kit, Soldiers Supplies (Shirts)
+
+            ## __**REFINERY TO DO LIST**__
+            Locations: Tine, Speaking Woods
+            - Basic Materials
+            - Explosive Materials
+            - Refined Materials
+
+            Locations: Fading Lights, Stonecradle
+            - Basic Materials
+            - HEP
         run: |
           python - <<'PY'
           import json
