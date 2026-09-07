@@ -58,10 +58,10 @@ jobs:
 
           ## __**REFINERY TO DO LIST**__
           **Tine / Speaking Woods**
-          **Refined Material:** Basic Materials, Explosive Materials, Refined Materials
+          Basic Materials, Explosive Materials, Refined Materials
 
           **Fading Lights / Stonecradle**
-          **Refined Material:** Basic Materials, HEP
+          Basic Materials, HEP
           """
 
           message = "\n".join(line.strip() for line in message.splitlines())
