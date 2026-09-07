@@ -15,7 +15,7 @@ jobs:
     steps:
       - name: Send Discord message
         env:
-          DISCORD_WEBHOOK_URL: ${{ secrets.Daily_Logi_Post }}
+          DISCORD_WEBHOOK_URL: ${{ secrets.DAILY_LOGI_POST }}
           MESSAGE: |
             📢 **Daily Regiment Update**
 
