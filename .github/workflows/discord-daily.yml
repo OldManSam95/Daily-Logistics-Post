@@ -2,7 +2,7 @@ name: Daily Discord Post
 
 on:
   schedule:
-    - cron: "0 19 * * *"
+    - cron: "50 09 * * *"
       timezone: "Europe/London"
 
   # Allows you to test it manually
