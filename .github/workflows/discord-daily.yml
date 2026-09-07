@@ -26,6 +26,12 @@ jobs:
           # Day 1 = 25 August 2026
           start_date = date(2026, 8, 25)
           today = datetime.now(ZoneInfo("Europe/London")).date()
+
+          # Skip the Discord Sitrep on 7 September 2026 only.
+          if today == date(2026, 9, 7):
+              print("Skipping Discord Sitrep for 7 September 2026")
+              raise SystemExit(0)
+
           day_number = (today - start_date).days + 1
 
           message = f"""# Daily Logistics Sitrep - Day {day_number}
