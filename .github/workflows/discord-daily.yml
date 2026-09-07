@@ -33,32 +33,38 @@ jobs:
           ## 🏭 __**MPF TO DO LIST**__ 🏭
           **Locations:** Speaking Woods, Tine
 
-          **Small Arms:** Loughcaster, Sampo, Fiddler, Green Ash Grenade, 7.62mm, 9mm
+          **Small Arms:** 7.92mm, Loughcaster, Sampo, Fiddler, Green Ash Grenade, 7.62mm, 9mm
 
-          **Heavy Arms:** Mortar Shell, RPG, Cutler
+          **Heavy Arms:** Carnyx Anti-Tank Rocket Launcher, Anti-Tank Sticky Bomb, AP⧸RPG, Mortar Shell, RPG, Cutler
 
-          **Heavy Ammunition:** 30mm, 40mm
+          **Heavy Ammunition:** 40mm
 
           **Resource:** Maintenance Supplies
+
+          **Uniforms:** Outrider's Mantle, Padded Boiler Suit, Physician's Jacket, Sapper Gear, Specialist's Overcoat
 
           *Post Your MPF Queues Here: https://discord.com/channels/1186822663897878588/1361080809754202142*
 
           ## 🔧 __**FACTORY TO DO LIST**__ 🔧
           **Locations:** Speaking Woods, Tine
 
-          **Small Arms:** Loughcaster, Sampo, Fiddler, Green Ash Grenade, 7.62mm, 9mm
+          **Small Arms:** 7.92mm, Loughcaster, Sampo, Fiddler, Green Ash Grenade, 7.62mm, 9mm
 
-          **Heavy Arms:** Mortar Shell, RPG, Cutler
+          **Heavy Arms:** Anti-Tank Sticky Bomb, AP⧸RPG, Mortar Shell, RPG
 
-          **Heavy Ammunition:** 30mm, 40mm
+          **Heavy Ammunition:** 40mm
 
-          **Utility:** Gas Mask, Gas Mask Filter, Radio, Binoculars, Alligator Charges
+          **Utility:** Havoc Charge, Havoc Charge Detonator, Gas Mask, Gas Mask Filter, Radio, Binoculars, Alligator Charges
 
           **Medical:** Bandages, Plasma, First Aid Kit, Trauma Kit, Soldier Supplies (Shirts)
 
+          **Resource:** Maintenance Supplies
+
+          **Uniforms:** Outrider's Mantle, Padded Boiler Suit, Physician's Jacket, Sapper Gear, Specialist's Overcoat
+
           ## ⛏️ __**REFINERY TO DO LIST**__ ⛏️
           **Tine - Speaking Woods**
-          Basic Materials, Explosive Materials, Refined Materials, High Explosive Powder
+          Basic Materials, Explosive Powder, Refined Materials, High Explosive Powder
           """
 
           message = "\n".join(line.strip() for line in message.splitlines())
