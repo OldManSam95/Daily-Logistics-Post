@@ -62,11 +62,6 @@ jobs:
 
           **Fading Lights / Stonecradle**
           **Refined Material:** Basic Materials, HEP
-
-          ## __**LOGISTICS REMINDER**__
-          **1. Regiment Stockpile → 2. Quick Pull → 3. Public**
-
-          Keep supplies moving south — **production sitting in Buckler Sound isn't helping the front.**
           """
 
           message = "\n".join(line.strip() for line in message.splitlines())
