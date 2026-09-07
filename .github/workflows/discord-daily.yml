@@ -30,7 +30,7 @@ jobs:
 
           message = f"""# Daily Logistics Sitrep - Day {day_number}
 
-          ## __**MPF TO DO LIST**__
+          ## 🏭 __**MPF TO DO LIST**__ 🏭
           **Locations:** Speaking Woods, Tine
 
           **Small Arms:** Loughcaster, Sampo, Fiddler, Green Ash Grenade, 7.62mm, 9mm
@@ -43,7 +43,7 @@ jobs:
 
           *Post Your MPF Queues Here: https://discord.com/channels/1186822663897878588/1361080809754202142*
 
-          ## __**FACTORY TO DO LIST**__
+          ## 🔧 __**FACTORY TO DO LIST**__ 🔧
           **Locations:** Speaking Woods, Tine
 
           **Small Arms:** Loughcaster, Sampo, Fiddler, Green Ash Grenade, 7.62mm, 9mm
@@ -56,7 +56,7 @@ jobs:
 
           **Medical:** Bandages, Plasma, First Aid Kit, Trauma Kit, Soldier Supplies (Shirts)
 
-          ## __**REFINERY TO DO LIST**__
+          ## ⛏️ __**REFINERY TO DO LIST**__ ⛏️
           **Tine - Speaking Woods**
           Basic Materials, Explosive Materials, Refined Materials
           """
