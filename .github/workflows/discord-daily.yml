@@ -35,7 +35,7 @@ jobs:
 
           **Small Arms:** 7.92mm, Loughcaster, Sampo, Fiddler, Green Ash Grenade, 7.62mm, 9mm
 
-          **Heavy Arms:** Carnyx Anti-Tank Rocket Launcher, Anti-Tank Sticky Bomb, AP⧸RPG, Mortar Shell, RPG, Cutler
+          **Heavy Arms:** Carnyx, Anti-Tank Sticky Bomb, AP/RPG, Mortar Shell, RPG, Cutler
 
           **Heavy Ammunition:** 40mm
 
@@ -50,17 +50,13 @@ jobs:
 
           **Small Arms:** 7.92mm, Loughcaster, Sampo, Fiddler, Green Ash Grenade, 7.62mm, 9mm
 
-          **Heavy Arms:** Anti-Tank Sticky Bomb, AP⧸RPG, Mortar Shell, RPG
+          **Heavy Arms:** Anti-Tank Sticky Bomb, AP/RPG, Mortar Shell, RPG
 
           **Heavy Ammunition:** 40mm
 
           **Utility:** Havoc Charge, Havoc Charge Detonator, Gas Mask, Gas Mask Filter, Radio, Binoculars, Alligator Charges
 
-          **Medical:** Bandages, Plasma, First Aid Kit, Trauma Kit, Soldier Supplies (Shirts)
-
-          **Resource:** Maintenance Supplies
-
-          **Uniforms:** Outrider's Mantle, Padded Boiler Suit, Physician's Jacket, Sapper Gear, Specialist's Overcoat
+          **Medical:** Bandages, Plasma, First Aid Kit, Trauma Kit, Soldier Supplies
 
           ## ⛏️ __**REFINERY TO DO LIST**__ ⛏️
           **Tine - Speaking Woods**
