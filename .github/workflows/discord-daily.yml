@@ -11,6 +11,9 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
       - name: Send Discord message
         env:
           DISCORD_WEBHOOK_URL: ${{ secrets.DAILY_LOGI_POST }}
@@ -20,56 +23,17 @@ jobs:
           import os
           import urllib.request
           import urllib.error
-          from datetime import datetime, date
-          from zoneinfo import ZoneInfo
 
-          # Day 1 = 25 August 2026
-          start_date = date(2026, 8, 25)
-          today = datetime.now(ZoneInfo("Europe/London")).date()
-          day_number = (today - start_date).days + 1
+          with open("sitrep-message.txt", "r", encoding="utf-8") as f:
+              message = f.read().strip()
 
-          message = f"""# Daily Logistics Sitrep - Day {day_number}
+          if not message:
+              raise RuntimeError("sitrep-message.txt is empty")
 
-          ## 🏭 __**MPF TO DO LIST**__ 🏭
-          **Locations:** Speaking Woods, Tine
-
-          **Small Arms:** 7.92mm, Loughcaster, Sampo, Fiddler, Green Ash Grenade, 7.62mm, 9mm
-
-          **Heavy Arms:** Carnyx, Anti-Tank Sticky Bomb, AP/RPG, Mortar Shell, RPG, Cutler
-
-          **Heavy Ammunition:** 40mm
-
-          **Resource:** Maintenance Supplies
-
-          **Uniforms:** Outrider's Mantle, Padded Boiler Suit, Physician's Jacket, Sapper Gear, Specialist's Overcoat
-
-          *Post Your MPF Queues Here: https://discord.com/channels/1186822663897878588/1361080809754202142*
-
-          ## 🔧 __**FACTORY TO DO LIST**__ 🔧
-          **Locations:** Speaking Woods, Tine
-
-          **Small Arms:** 7.92mm, Loughcaster, Sampo, Fiddler, Green Ash Grenade, 7.62mm, 9mm
-
-          **Heavy Arms:** Anti-Tank Sticky Bomb, AP/RPG, Mortar Shell, RPG
-
-          **Heavy Ammunition:** 40mm
-
-          **Utility:** Havoc Charge, Havoc Charge Detonator, Gas Mask, Gas Mask Filter, Radio, Binoculars, Alligator Charges
-
-          **Medical:** Bandages, Plasma, First Aid Kit, Trauma Kit, Soldier Supplies
-
-          ## ⛏️ __**REFINERY TO DO LIST**__ ⛏️
-          **Tine - Speaking Woods**
-          Basic Materials, Explosive Powder, Refined Materials, High Explosive Powder
-          """
-
-          message = "\n".join(line.strip() for line in message.splitlines())
-
-          url = os.environ["DISCORD_WEBHOOK_URL"]
           data = json.dumps({"content": message}).encode("utf-8")
 
           request = urllib.request.Request(
-              url,
+              os.environ["DISCORD_WEBHOOK_URL"],
               data=data,
               headers={
                   "Content-Type": "application/json",
@@ -80,7 +44,7 @@ jobs:
 
           try:
               with urllib.request.urlopen(request) as response:
-                  print(f"Discord Sitrep sent successfully - Day {day_number}")
+                  print("Discord Sitrep sent successfully")
                   print("Status:", response.status)
           except urllib.error.HTTPError as e:
               print("Discord returned HTTP error:", e.code)
