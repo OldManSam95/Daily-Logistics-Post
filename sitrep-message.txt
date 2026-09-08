@@ -3,13 +3,13 @@
 ## 🏭 __**MPF TO DO LIST**__ 🏭
 **Locations:** Tine, Speaking Woods
 
+**Small Arms:** 7.62mm, 7.92mm, 9mm, Fiddler, Green Ash Grenade, Loughcaster, Sampo
+
 **Heavy Arms:** 30mm, Anti-Tank Sticky Bomb, AP/RPG, Carnyx, Cutler, Mortar Shell, RPG
 
 **Heavy Ammunition:** 40mm
 
-**Small Arms:** 7.62mm, 7.92mm, 9mm, Fiddler, Green Ash Grenade, Loughcaster, Sampo
-
-**Resource:** Maintenance Supplies
+**Resources:** Maintenance Supplies
 
 **Uniforms:** Outrider's Mantle, Padded Boiler Suit, Physician's Jacket, Sapper Gear, Specialist's Overcoat
 
@@ -20,9 +20,9 @@
 
 **Small Arms:** 7.62mm, 7.92mm, 9mm, Fiddler, Green Ash Grenade, Loughcaster, Sampo
 
-**Utility:** Alligator Charges, Binoculars, Gas Mask, Gas Mask Filter, Havoc Charge, Havoc Charge Detonator, Radio
-
 **Heavy Arms:** Anti-Tank Sticky Bomb, AP/RPG, Mortar Shell, RPG
+
+**Utility:** Alligator Charges, Binoculars, Gas Mask, Gas Mask Filter, Havoc Charge, Havoc Charge Detonator, Radio
 
 **Medical:** Bandages, First Aid Kit, Plasma, Soldier Supplies, Trauma Kit
 
