@@ -1,1 +1,31 @@
-Daily Logistics Sitrep placeholder
+# Daily Logistics Sitrep - Day 15
+
+## 🏭 __**MPF TO DO LIST**__ 🏭
+**Locations:** Speaking Woods, Tine
+
+**Heavy Arms:** 30mm, Anti-Tank Sticky Bomb, AP/RPG, Carnyx, Cutler, Mortar Shell, RPG
+
+**Heavy Ammunition:** 40mm
+
+**Small Arms:** 7.62mm, 7.92mm, 9mm, Fiddler, Green Ash Grenade, Loughcaster, Sampo
+
+**Resource:** Maintenance Supplies
+
+**Uniforms:** Outrider's Mantle, Padded Boiler Suit, Physician's Jacket, Sapper Gear, Specialist's Overcoat
+
+*Post Your MPF Queues Here: https://discord.com/channels/1186822663897878588/1361080809754202142*
+
+## 🔧 __**FACTORY TO DO LIST**__ 🔧
+**Locations:** Speaking Woods, Tine
+
+**Small Arms:** 7.62mm, 7.92mm, 9mm, Fiddler, Green Ash Grenade, Loughcaster, Sampo
+
+**Utility:** Alligator Charges, Binoculars, Gas Mask, Gas Mask Filter, Havoc Charge, Havoc Charge Detonator, Radio
+
+**Heavy Arms:** Anti-Tank Sticky Bomb, AP/RPG, Mortar Shell, RPG
+
+**Medical:** Bandages, First Aid Kit, Plasma, Soldier Supplies, Trauma Kit
+
+## ⛏️ __**REFINERY TO DO LIST**__ ⛏️
+**Tine - Speaking Woods**
+Basic Materials, Explosive Powder, High Explosive Powder, Refined Materials
