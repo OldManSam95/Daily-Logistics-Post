@@ -27,5 +27,6 @@
 **Medical:** Bandages, First Aid Kit, Plasma, Soldier Supplies, Trauma Kit
 
 ## ⛏️ __**REFINERY TO DO LIST**__ ⛏️
-**Tine - Speaking Woods**
+**Locations:** Tine, Speaking Woods
+
 Basic Materials, Explosive Powder, High Explosive Powder, Refined Materials
