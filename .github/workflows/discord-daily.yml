@@ -5,49 +5,58 @@ on:
     - cron: "30 17 * * *"
       timezone: "Europe/London"
   workflow_dispatch:
+    inputs:
+      post_to_discord:
+        description: "Send to Discord now (leave unchecked for preview only)"
+        type: boolean
+        required: true
+        default: false
+
+permissions:
+  contents: read
+
+concurrency:
+  group: daily-discord-sitrep
+  cancel-in-progress: false
 
 jobs:
   discord-post:
     runs-on: ubuntu-latest
-
+    timeout-minutes: 10
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+        with:
+          persist-credentials: false
 
-      - name: Send Discord message
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: python -m pip install -r requirements.txt
+
+      - name: Test generation and posting safeguards
+        run: python -m unittest discover -s tests -v
+
+      - name: Generate fresh Sitrep and optionally post
         env:
+          GOOGLE_SERVICE_ACCOUNT_JSON: ${{ secrets.GOOGLE_SERVICE_ACCOUNT_JSON }}
+          GOOGLE_SHEET_ID: ${{ secrets.GOOGLE_SHEET_ID }}
           DISCORD_WEBHOOK_URL: ${{ secrets.DAILY_LOGI_POST }}
+          POST_TO_DISCORD: ${{ github.event_name == 'schedule' || (github.event_name == 'workflow_dispatch' && inputs.post_to_discord) }}
         run: |
-          python - <<'PY'
-          import json
-          import os
-          import urllib.request
-          import urllib.error
+          if [ "$POST_TO_DISCORD" = "true" ]; then
+            python scripts/sitrep.py --send
+          else
+            python scripts/sitrep.py
+          fi
 
-          with open("sitrep-message.txt", "r", encoding="utf-8") as f:
-              message = f.read().strip()
-
-          if not message:
-              raise RuntimeError("sitrep-message.txt is empty")
-
-          data = json.dumps({"content": message}).encode("utf-8")
-
-          request = urllib.request.Request(
-              os.environ["DISCORD_WEBHOOK_URL"],
-              data=data,
-              headers={
-                  "Content-Type": "application/json",
-                  "User-Agent": "DiscordWebhook-GitHubActions/1.0"
-              },
-              method="POST"
-          )
-
-          try:
-              with urllib.request.urlopen(request) as response:
-                  print("Discord Sitrep sent successfully")
-                  print("Status:", response.status)
-          except urllib.error.HTTPError as e:
-              print("Discord returned HTTP error:", e.code)
-              print(e.read().decode())
-              raise
-          PY
+      - name: Save generated preview
+        if: ${{ !cancelled() && hashFiles('sitrep-preview.txt') != '' }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: sitrep-preview
+          path: sitrep-preview.txt
+          retention-days: 7
